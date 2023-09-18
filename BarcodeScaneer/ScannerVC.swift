@@ -11,7 +11,7 @@ import UIKit
 
 enum CameraError: String {
     case inValidDeviceInput = "Something is wrong with the camera. We are unable to capture the input."
-    case inValidScannedValue = "The value scanned is not valid. This app scans EAN-8 and EAN-13"
+    case inValidScannedValue = "The value scanned is not valid. This app scans EAN-8 and EAN-13."
 }
 protocol ScannerVCDelegate {
     func didFind(barCode:String)
@@ -102,9 +102,8 @@ extension ScannerVC : AVCaptureMetadataOutputObjectsDelegate{
             scannerDelegate.didSurface(error: .inValidScannedValue)
             return
         }
-        
         scannerDelegate.didFind(barCode: barcode)
-        
+    
     }
     
 }
